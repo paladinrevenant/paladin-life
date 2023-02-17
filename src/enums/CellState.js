@@ -1,4 +1,4 @@
-class CellState {
+export default class CellState {
     static Dead = new CellState("dead");
     static Alive = new CellState("alive");
 
@@ -6,5 +6,3 @@ class CellState {
         this.name = name;
     }
 }
-
-export default CellState;

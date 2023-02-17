@@ -1,9 +1,7 @@
-/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import path from "path";
 import vue from "@vitejs/plugin-vue";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: [
@@ -20,8 +18,16 @@ export default defineConfig({
         replacement: path.resolve(__dirname, "src/logic")
       },
       {
+        find: "@enums",
+        replacement: path.resolve(__dirname, "src/enums")
+      },
+      {
         find: "@styles",
         replacement: path.resolve(__dirname, "src/styles")
+      },
+      {
+        find: "@field",
+        replacement: path.resolve(__dirname, "src/field")
       }
     ]
   },

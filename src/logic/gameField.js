@@ -1,4 +1,5 @@
 import { CELL_STATE } from "@source/constants";
+import CellState from "@enums/CellState";
 
 /**
  * Generates the game field and initializes the cells
@@ -19,7 +20,7 @@ export function initGameField(cols, rows) {
         throw new RangeError("Invalid 'rows' size");
     
     for (let a = 0; a < cols; a++) {
-        gameField[a] = new Array(rows).fill(CELL_STATE.DEAD);
+        gameField[a] = new Array(rows).fill(CellState.Dead);
     }
     console.log("Flag! 1");
 
@@ -42,7 +43,7 @@ export function isGameFieldSizeValid(size) {
 export function fillField(field) {
     field.foreach( col => {
         col.foreach( cell => {
-            cell = CELL_STATE.ALIVE; // eslint-disable-line no-unused-vars
+            cell = CellState.Alive; // eslint-disable-line no-unused-vars
         });
     });
 }
@@ -50,7 +51,7 @@ export function fillField(field) {
 export function emptyField(field) {
     field.foreach( col => {
         col.foreach( cell => {
-            cell = CELL_STATE.DEAD; // eslint-disable-line no-unused-vars
+            cell = CellState.Alive; // eslint-disable-line no-unused-vars
         });
     });
 }
