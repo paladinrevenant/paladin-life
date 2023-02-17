@@ -5,12 +5,13 @@
   "description": "My implementation of Conway's Game of Life",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "watch": "vitest watch",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/paladinrevenant/paladin-life.git"
-  },
+  "repository": "git+https://github.com/paladinrevenant/paladin-life.git",
   "author": "PaladinRevenant",
   "license": "UNLICENSED",
   "bugs": {
@@ -18,5 +19,18 @@
   },
   "homepage": "https://github.com/paladinrevenant/paladin-life#readme",
   "devDependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
+    "eslint": "^8.31.0",
+    "eslint-plugin-vitest": "^0.0.21",
+    "eslint-plugin-vitest-globals": "^1.2.0",
+    "eslint-plugin-vue": "^9.7.0",
+    "path": "^0.12.7",
+    "sass": "^1.57.1",
+    "sinon": "^15.0.1",
+    "vite": "^3.2.4",
+    "vitest": "^0.26.3"
+  },
+  "dependencies": {
+    "vue": "^3.2.45"
   }
 }
