@@ -1,0 +1,6 @@
+class Cell {
+    #state;
+
+    constructor() {
+    }
+}
