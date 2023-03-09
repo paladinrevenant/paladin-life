@@ -26,8 +26,8 @@ export default defineConfig({
         replacement: path.resolve(__dirname, "src/styles")
       },
       {
-        find: "@field",
-        replacement: path.resolve(__dirname, "src/field")
+        find: "@world",
+        replacement: path.resolve(__dirname, "src/world")
       }
     ]
   },

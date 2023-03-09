@@ -1,7 +1,7 @@
 <template>
     <div class="game-field">
         <GameFieldRow
-            v-for="(row, index) in gameField"
+            v-for="(row, index) in gameWorld.matrix"
             :key="index"
             :v-model="row"
         />
@@ -11,6 +11,7 @@
 <script>
     import logic from "@logic/gameField.js";
     import GameFieldRow from "@components/GameFieldRow.vue";
+    import GameWorld from "@world/GameWorld.js";
 
     export default {
         name: "GameField",
@@ -19,12 +20,11 @@
         },
         data() {
             return {
-                gameField: []
+                gameWorld: { matrix: [] }
             };
         },
         mounted() {
-            this.gameField = logic.initGameField(20, 20);
-            logic.randomizeField(this.gameField);
+            this.gameWorld = new GameWorld(20, 20);
         }
     };
 </script>
