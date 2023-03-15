@@ -28,6 +28,10 @@ export default defineConfig({
       {
         find: "@world",
         replacement: path.resolve(__dirname, "src/world")
+      },
+      {
+        find: "@entities",
+        replacement: path.resolve(__dirname, "src/entities")
       }
     ]
   },

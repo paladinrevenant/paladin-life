@@ -3,13 +3,13 @@
         <GameFieldRow
             v-for="(row, index) in gameWorld.matrix"
             :key="index"
-            :v-model="row"
+            :rowData="row"
         />
     </div>
 </template>
 
 <script>
-    import logic from "@logic/gameField.js";
+    // import logic from "@logic/gameField.js";
     import GameFieldRow from "@components/GameFieldRow.vue";
     import GameWorld from "@world/GameWorld.js";
 

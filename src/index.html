@@ -305,6 +305,8 @@ const cellClicked = (x, y) => {
     </style>
   </head>
   <body>
+    <div style="display:flex">
+    <div>
     <strong>Generation:</strong><span id="generation">0</span>
     <table>
       <tr>
@@ -762,5 +764,9 @@ const cellClicked = (x, y) => {
       <button onclick="stopPlay()">Pause</button>
     </div>
     <div><Button onclick="toggleWrapping()">Wrapping</Button><span id="wrap-label">None</span></div>
+    </div>
+    <div id="paladin-life"></div>
+    </div>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

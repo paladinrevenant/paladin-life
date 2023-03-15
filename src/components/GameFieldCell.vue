@@ -3,14 +3,18 @@
 </template>
 
 <script>
-    import { CELL_STATE } from "@source/constants.js";
+    import CellState from "@enums/CellState";
 
     export default {
         name: "GameFieldCell",
         props: {
-            modelValue: {
-                type: Number,
-                default: 0
+            cellData: {
+                type: Object,
+                default: ()=>{
+                    return {
+                    state: CellState.Dead
+                    };
+                }
             }
         },
         emits: ["update:modelValue"],
@@ -18,16 +22,18 @@
             classes() {
                 let classList = ["game-field-cell"];
                 
-                switch (this.modelValue) {
-                    case CELL_STATE.DEAD:
-                        classList.push("dead");
-                        break;
-                    case CELL_STATE.ALIVE:
-                        classList.push("alive");
-                        break;
-                    default:
-                        break;
-                }
+                if (this.cellData.state == CellState.Dead)
+                    classList.push("dead");
+                else if (this.cellData.state == CellState.Alive)
+                    classList.push("alive");
+                // switch (this.cellData.state) {
+                //     case CellState.Dead:
+                //         break;
+                //     case CellState.Alive:
+                //         break;
+                //     default:
+                //         break;
+                // }
 
                 return classList;
             }
@@ -41,6 +47,8 @@
         box-sizing: border-box;
         height: 1em;
         width: 1em;
+        border: 1px solid black;
+        display: table-cell;
 
         .dead {
             background-color: #202020;

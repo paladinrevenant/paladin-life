@@ -1,9 +1,9 @@
 <template>
     <div class="game-field-row">
         <GameFieldCell
-            v-for="(cell, index) in modelValue"
+            v-for="(cell, index) in rowData"
             :key="index"
-            :v-model="cell"
+            :cellData="cell"
         />
     </div>
 </template>
@@ -17,7 +17,7 @@
             GameFieldCell
         },
         props: {
-            modelValue: {
+            rowData: {
                 type: Array,
                 default: ()=>[]
             }
